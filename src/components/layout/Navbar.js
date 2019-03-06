@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { MDBNavbar, MDBNavbarBrand, MDBNavbarNav, MDBNavbarToggler, MDBCollapse, MDBNavItem, MDBNavLink, } from 'mdbreact';
 // import Dashboard from '../dashboard/Dashboard';
+import delivery from './delivery.png'
 
 class Navbar extends Component{
     constructor(props) {
@@ -24,7 +25,8 @@ class Navbar extends Component{
             <header>
                 <MDBNavbar color="warning-color-dark" dark expand="md" fixed="top">
                 <MDBNavbarBrand href="/">
-                    <strong>Navbar</strong>
+                <img src={delivery} alt="refuge" width="100"></img>
+
                 </MDBNavbarBrand>
                 {!this.state.isWideEnough && <MDBNavbarToggler onClick={this.onClick} />}
                 <MDBCollapse isOpen={this.state.collapse} navbar>
