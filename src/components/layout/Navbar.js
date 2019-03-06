@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { MDBNavbar, MDBNavbarBrand, MDBNavbarNav, MDBNavbarToggler, MDBCollapse, MDBNavItem, MDBNavLink, } from 'mdbreact';
+// import Dashboard from '../dashboard/Dashboard';
 
 class Navbar extends Component{
     constructor(props) {
@@ -31,6 +32,7 @@ class Navbar extends Component{
                     <MDBNavItem active>
                         <MDBNavLink to='/'>Home</MDBNavLink>
                     </MDBNavItem>
+           
                     <MDBNavItem>
                         <MDBNavLink to='/signup'>SignUp</MDBNavLink>
                     </MDBNavItem>

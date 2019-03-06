@@ -23,13 +23,33 @@ class Signup extends Component {
 
     handleSubmit = (e) => {
         e.preventDefault()
-        console.log(this.state);
+        // console.log(this.state);
+        fetch('https://senditparcel.herokuapp.com/api/v2/auth/signup',{
+            method: 'POST',
+            body: JSON.stringify(this.state),
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        })
+        .then((res)=>res.json())
+        .then((data) =>{
+            if (data){
+                document.getElementById("reg").innerText = data["message"];
+    
+            }else{
+                window.location.replace("Signin")        
+    
+            }
+    })
+    .catch(error => console.log('error:',error));
+
     }
 
 
     render(){
         return (
             <MDBContainer>
+                <div id="reg"></div>
                 <form onSubmit={this.handleSubmit} className="white">
                     <MDBInput label="First Name" type="text" id="first_name" onChange={this.handleChange} icon="signature" />
                     <MDBInput label="Last Name" type="text" id="last_name" onChange={this.handleChange} icon="signature" />
