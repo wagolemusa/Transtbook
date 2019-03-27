@@ -1,0 +1,31 @@
+
+.tabs-info {
+    background-color: #33b5e5 !important;
+    padding-bottom: 2em;
+}
+
+
+.nav-item a{
+    color: #ffffff;
+    padding-bottom: 1em;
+    size: 20px;
+}
+
+
+.nav-item .nav-link a{
+    color: #b81111;
+    -webkit-transition: 0.35s;
+    transition: 0.35s;
+    size: 500px;
+}
+
+.card{
+
+    padding-right: 2em;
+    padding-left: 2em;
+    padding: 2em;
+    max-width: 30rem;
+    align-items: center;
+    justify-content: center
+    
+}

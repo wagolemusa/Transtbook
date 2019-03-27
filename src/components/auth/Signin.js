@@ -1,8 +1,12 @@
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
+import { Link } from 'react-router-dom';
 
-import { MDBInput, MDBContainer, MDBAlert } from 'mdbreact';
+
+import { MDBInput, MDBContainer, ToastContainer, toast } from 'mdbreact';
+import Nav from './Nav';
 
 class Signin extends Component {
+
 
     state = {
         username: '',
@@ -36,10 +40,12 @@ class Signin extends Component {
 
                 if(data.access_token){
                     if(this.state.username == "admin"){
+                        window.location.replace("../admindashboard/AdminDashboard")
 
-                        window.location.replace("admin_dashboard")
                     }else{
                         window.location.replace("../dashboard/Dashboard")
+
+
             }
         }
     }
@@ -53,23 +59,49 @@ class Signin extends Component {
 }
 
 
+notify(type){
+    return () => {
+        toast.success('message', {
+        position: "top-right",
+    })
+}
+}
+
+// toast.success(this.loginMsg, {
+//     position: "top-right",
+// })
+
     render(){
         
         return(
+            <div>
+            <Nav/>
             <MDBContainer>
+            <div class="card"> 
+                <h2>Login</h2>
+
                 <div className="form-group">
-                    <MDBAlert aria-hidden="true" color="warning" dismiss>
-                    <strong id="loginMsg"></strong>
-                </MDBAlert>
+                <Fragment>
+                <strong id="loginMsg"></strong>
+                <ToastContainer
+                    hideProgressBar={true}
+                    newestOnTop={true}
+                    autoClose={5000}
+                />
+                </Fragment>
                 <div ></div>
                 <form onSubmit={this.handleSubmit} className="white">
                      <MDBInput label="Username" type="text" id="username" onChange={this.handleChange} icon="user" required/>
                     <MDBInput label="Password" type="password" id="password" onChange={this.handleChange} icon="key" required/>
-                    <button className="btn pink lighten-1 z-depth-0">Sign In</button>   
-
+                    <button className="btn pink lighten-1 z-depth-0" onClick={this.notify('success')}>Sign In</button>   
+                    <Link to='/signup'>Don't have an account? Sign up</Link>
                 </form>
             </div>
+
+        </div>
             </MDBContainer>
+        </div>
+            
         )
 
     }

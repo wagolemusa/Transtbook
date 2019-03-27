@@ -22,19 +22,32 @@ class Navbar extends Component{
   render() {
     return (
         <div>
+
             <header>
                 <MDBNavbar color="warning-color-dark" dark expand="md" fixed="top">
                 <MDBNavbarBrand href="/">
+
                 <img src={delivery} alt="refuge" width="100"></img>
 
                 </MDBNavbarBrand>
                 {!this.state.isWideEnough && <MDBNavbarToggler onClick={this.onClick} />}
                 <MDBCollapse isOpen={this.state.collapse} navbar>
-                    <MDBNavbarNav right>
-                    <MDBNavItem active>
-                        <MDBNavLink to='/'>Home</MDBNavLink>
+                <MDBNavbarNav left>
+                <MDBNavItem>
+                        <MDBNavLink to='/'>Departures/Fares</MDBNavLink>
                     </MDBNavItem>
-           
+                    <MDBNavItem>
+                        <MDBNavLink to='/'>Station</MDBNavLink>
+                    </MDBNavItem>
+                    <MDBNavItem>
+                        <MDBNavLink to='/'>About</MDBNavLink>
+                    </MDBNavItem>
+                    <MDBNavItem>
+                        <MDBNavLink to='/'>Support</MDBNavLink>
+                    </MDBNavItem>
+                    </MDBNavbarNav>
+                    <MDBNavbarNav right>
+                    
                     <MDBNavItem>
                         <MDBNavLink to='/signup'>SignUp</MDBNavLink>
                     </MDBNavItem>

@@ -1,21 +1,43 @@
 import React, { Component } from 'react'
+import Dashboard from '../dashboard/Dashboard';
+import AdminDashboard from '../admindashboard/AdminDashboard';
 
-import { MDBView, MDBMask  } from 'mdbreact';
+import { BrowserRouter, Switch, Route } from 'react-router-dom';
+import Signup from '../auth/Signup';
+import Signin from '../auth/Signin';
+import send from '../dashboard/send';
+import Navbar from '../layout/Navbar';
+import book from '../dashboard/book';
+
 
 class Home extends Component{
 
-    render(){
+     render(){
         return(
+            <BrowserRouter>
 
 
-        <MDBView src="http://photos.wikimapia.org/p/00/02/53/60/61_big.jpg">
-         <MDBMask overlay="black-light" className="flex-center flex-column text-white text-center">
-              <h1>Book and travel, Or send Parcel</h1>
-              <h5>The Guardian Coach Bus Service provides travelers with genuine comfort they deserve;from booking to when the passengers board the bus. Travelers will not need to go all the way to booking offices</h5>
-              <br />
-              <p>All payments are done Via Mpesa</p>
-            </MDBMask>
-          </MDBView> 
+        <div className="App">
+
+            <Switch>
+
+            <Route exact path='/' component={ Navbar } />
+            <Route path='/send' component={ send } />
+            <Route path='/signup' component={ Signup} />
+            <Route path='/signin' component={ Signin } />
+            <Route path='/dashboard' component={Dashboard} />
+            <Route path='/adminDashboard' component={AdminDashboard} />
+            <Route path='/book' component={book} />
+
+            </Switch>
+
+        </div>
+        </BrowserRouter>
+
+    // <div className="">
+    // <Navbar />
+
+    // </div>
         );
     }
 }

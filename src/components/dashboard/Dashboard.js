@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import { MDBNavbar, MDBNavbarBrand, MDBNavbarNav, MDBNavItem, MDBNavLink, MDBNavbarToggler, MDBCollapse, MDBDropdown,
     MDBDropdownToggle, MDBDropdownMenu, MDBDropdownItem, MDBIcon } from "mdbreact";
 
+import delivery from '../layout/delivery.png'
+
 
 class Dashboard extends Component{
     state = {
@@ -15,34 +17,25 @@ class Dashboard extends Component{
       
       render() {
         return (
-          <MDBNavbar color="default-color" dark expand="md">
-            <MDBNavbarBrand>
-              <strong className="white-text">Navbar</strong>
-            </MDBNavbarBrand>
+          <MDBNavbar color="warning-color-dark" dark expand="md" fixed="top">
+          <MDBNavbarBrand href="/">
+            <img src={delivery} alt="refuge" width="100"></img>
+          </MDBNavbarBrand>
             <MDBNavbarToggler onClick={this.toggleCollapse} />
             <MDBCollapse id="navbarCollapse3" isOpen={this.state.isOpen} navbar>
               <MDBNavbarNav left>
                 <MDBNavItem active>
-                  <MDBNavLink to="#!">Home</MDBNavLink>
+                  <MDBNavLink to='/book'>Book</MDBNavLink>
                 </MDBNavItem>
                 <MDBNavItem>
-                  <MDBNavLink to="#!">Features</MDBNavLink>
+                  <MDBNavLink to="/send">Send Parcel</MDBNavLink>
                 </MDBNavItem>
                 <MDBNavItem>
-                  <MDBNavLink to="#!">Pricing</MDBNavLink>
+                  <MDBNavLink to="#!">Departures/Fares</MDBNavLink>
                 </MDBNavItem>
+              
                 <MDBNavItem>
-                  <MDBDropdown>
-                    <MDBDropdownToggle nav caret>
-                      <div className="d-none d-md-inline">Dropdown</div>
-                    </MDBDropdownToggle>
-                    <MDBDropdownMenu className="dropdown-default" right>
-                      <MDBDropdownItem href="#!">Action</MDBDropdownItem>
-                      <MDBDropdownItem href="#!">Another Action</MDBDropdownItem>
-                      <MDBDropdownItem href="#!">Something else here</MDBDropdownItem>
-                      <MDBDropdownItem href="#!">Something else here</MDBDropdownItem>
-                    </MDBDropdownMenu>
-                  </MDBDropdown>
+             
                 </MDBNavItem>
               </MDBNavbarNav>
               <MDBNavbarNav right>
@@ -59,13 +52,16 @@ class Dashboard extends Component{
                 <MDBNavItem>
                   <MDBDropdown>
                     <MDBDropdownToggle nav caret>
+                    Refuge wise
                       <MDBIcon icon="user" />
                     </MDBDropdownToggle>
                     <MDBDropdownMenu className="dropdown-default" right>
-                      <MDBDropdownItem href="#!">Action</MDBDropdownItem>
-                      <MDBDropdownItem href="#!">Another Action</MDBDropdownItem>
-                      <MDBDropdownItem href="#!">Something else here</MDBDropdownItem>
-                      <MDBDropdownItem href="#!">Something else here</MDBDropdownItem>
+                      <MDBDropdownItem href="#!">Payments</MDBDropdownItem>
+                      <MDBDropdownItem href="#!">Booking History</MDBDropdownItem>
+                      <MDBDropdownItem href="#!">Parcel Deliveries</MDBDropdownItem>
+                      <MDBDropdownItem href="#!">Profile </MDBDropdownItem>
+                      <MDBDropdownItem href="#!">LogOut </MDBDropdownItem>
+
                     </MDBDropdownMenu>
                   </MDBDropdown>
                 </MDBNavItem>
