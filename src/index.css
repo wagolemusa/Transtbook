@@ -12,20 +12,125 @@
 }
 
 
-.nav-item .nav-link a{
-    color: #b81111;
-    -webkit-transition: 0.35s;
-    transition: 0.35s;
-    size: 500px;
+
+.sidebar-fixed {
+    height: 150vh;
+    width: 270px;
+    -webkit-box-shadow: 0 2px 5px 0 rgba(0,0,0,.16),0 2px 10px 0 rgba(0,0,0,.12);
+    box-shadow: 0 2px 5px 0 rgba(0,0,0,.16),0 2px 10px 0 rgba(0,0,0,.12);
+    z-index: 1050;
+    background-color: #fff;
+    padding: 1.5rem 1.5rem;
+}
+.navbar, .page-footer, main {
+    padding-left: 18rem;
 }
 
-.card{
+.justify-content-between {
+    -ms-flex-pack: justify !important;
+    justify-content: space-between !important;
+}
+.d-sm-flex {
+    display: -ms-flexbox !important;
+    display: flex !important;
+}
+.card-body {
+    padding-top: 2em;
+    padding-bottom: 2em;
+}
 
-    padding-right: 2em;
-    padding-left: 2em;
-    padding: 2em;
-    max-width: 30rem;
-    align-items: center;
-    justify-content: center
-    
+.mb-4, .my-4 {
+    margin-bottom: 1.5rem !important;
+}
+
+.card, .navbar {
+    -webkit-box-shadow: 0 2px 5px 0 rgba(0,0,0,.16),0 2px 10px 0 rgba(0,0,0,.12);
+}
+
+.inforide {
+    box-shadow: 1px 2px 8px 0px #f1f1f1;
+    background-color: white;
+    border-radius: 8px;
+    height: 125px;
+  }
+  .rideone img {
+    width: 70%;
+  }
+  
+  .ridetwo img {
+    width: 60%;
+  }
+  
+  .ridethree img {
+    width: 50%;
+  }
+
+  .rideone {
+    background-color: #6CC785;
+    padding-top: 25px;
+    border-radius: 8px 0px 0px 8px;
+    text-align: center;
+    height: 125px;
+    margin-left: 15px;
+  }
+  .ridetwo {
+    background-color: #9A75FE;
+    padding-top: 30px;
+    border-radius: 8px 0px 0px 8px;
+    text-align: center;
+    height: 125px;
+    margin-left: 15px;
+  }
+  
+  .ridethree {
+    background-color: #4EBCE5;
+    padding-top: 35px;
+    border-radius: 8px 0px 0px 8px;
+    text-align: center;
+    height: 125px;
+    margin-left: 15px;
+  }
+
+  .fontsty {
+    margin-right: -15px;
+  }
+  
+  .fontsty h2{
+    color: #6E6E6E;
+    font-size: 35px;
+    margin-top: 15px;
+    text-align: right;
+    margin-right: 30px;
+  }
+  
+  .fontsty h4{
+    color: #6E6E6E;
+    font-size: 25px;
+    margin-top: 20px;
+    text-align: right;
+    margin-right: 30px;
+  }
+  
+  .content-wrapper {
+    min-height: calc(100vh - 56px);
+    padding-top: 4rem;
+    overflow-x: hidden;
+    background: transparent;
+  }
+
+  .sidebar-fixed i{
+    color: #FF8800;
+      padding-left: 0.1em;
+      font-size: 2em;
+
+  }
+
+  .list-group {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    padding-left: 0;
+    margin-bottom: 0;
+    height: 40em;
 }
