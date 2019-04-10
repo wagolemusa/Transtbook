@@ -55,22 +55,25 @@ class Signup extends Component {
             <div>
             <Nav/>
          <MDBContainer>
-            <div class="card"> 
-            <h2>Create an Account</h2>
-                <div id="reg"></div>
+         <div class="login-wrap2">
+            <div class="login-html">
+            <div id="reg"></div>
 
-                <form onSubmit={this.handleSubmit} className="white">
+            <h2>Create an Account</h2>
+            <br/>
+                <form onSubmit={this.handleSubmit}>
                     <MDBInput label="First Name" type="text" id="first_name" onChange={this.handleChange} icon="signature" />
                     <MDBInput label="Last Name" type="text" id="last_name" onChange={this.handleChange} icon="signature" />
                     <MDBInput label="Phone Number" type="number" id="phone" onChange={this.handleChange}  icon="phone-volume" />
                     <MDBInput label="Username" type="text" id="username" onChange={this.handleChange} icon="user" />
                     <MDBInput label="Email" type="email" id="email" onChange={this.handleChange} icon="at" />
-                    <MDBInput label="Password" type="password" id="password" onChange={this.handleChange} icon="key" />
-                    <MDBInput label="Confirm password" type="password" id="confirm_password" onChange={this.handleChange} icon="key" />
-                    <button className="btn pink lighten-1 z-depth-0">Sign Up</button> 
+                    <MDBInput label="Password" type="password" id="password" onChange={this.handleChange} icon="unlock-alt" />
+                    <MDBInput label="Confirm password" type="password" id="confirm_password" onChange={this.handleChange} icon="unlock-alt" />
+                    <button className="btn btn-info">Sign Up</button> 
                     <Link to='/signin'>Already a member ? Sign In..</Link>
                 </form>
                 </div>
+            </div>
             </MDBContainer>
             </div>
         )

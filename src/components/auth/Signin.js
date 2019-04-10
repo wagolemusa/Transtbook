@@ -77,11 +77,9 @@ notify(type){
             <div>
             <Nav/>
             <MDBContainer>
-            <div class="card"> 
-                <h2>Login</h2>
-
-                <div className="form-group">
-                <Fragment>
+        <div class="login-wrap">
+            <div class="login-html">
+            <Fragment>
                 <strong id="loginMsg"></strong>
                 <ToastContainer
                     hideProgressBar={true}
@@ -89,16 +87,18 @@ notify(type){
                     autoClose={5000}
                 />
                 </Fragment>
-                <div ></div>
-                <form onSubmit={this.handleSubmit} className="white">
+                <h2><strong>Login</strong></h2>
+                <br/>
+                <form onSubmit={this.handleSubmit}>
                      <MDBInput label="Username" type="text" id="username" onChange={this.handleChange} icon="user" required/>
-                    <MDBInput label="Password" type="password" id="password" onChange={this.handleChange} icon="key" required/>
-                    <button className="btn pink lighten-1 z-depth-0" onClick={this.notify('success')}>Sign In</button>   
+                    <MDBInput label="Password" type="password" id="password" onChange={this.handleChange} icon="unlock-alt" required/>
+                    <button className="btn btn-info" onClick={this.notify('success')}>Sign In</button>   
                     <Link to='/signup'>Don't have an account? Sign up</Link>
                 </form>
             </div>
+    </div>
+        
 
-        </div>
             </MDBContainer>
         </div>
             
