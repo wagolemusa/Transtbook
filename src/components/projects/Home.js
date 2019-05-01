@@ -8,7 +8,12 @@ import Signin from '../auth/Signin';
 import send from '../dashboard/send';
 import Navbar from '../layout/Navbar';
 import book from '../dashboard/book';
-
+import passenger from '../admindashboard/passenger';
+import search from '../admindashboard/search';
+import datesearch from '../admindashboard/datesearch';
+import payments from '../admindashboard/payments';
+import parcelorders from '../admindashboard/parcelorders';
+import create_price from '../admindashboard/create_price';
 
 class Home extends Component{
 
@@ -28,6 +33,12 @@ class Home extends Component{
             <Route path='/dashboard' component={Dashboard} />
             <Route path='/adminDashboard' component={AdminDashboard} />
             <Route path='/book' component={book} />
+            <Route path='/passenger' component={passenger} />
+            <Route path='/search' component={search} />
+            <Route path='/datesearch' component={datesearch} />
+            <Route path='/payments' component={payments} />
+            <Route path='/parcelorders' component={parcelorders} />
+            <Route path='/create_price' component={create_price} />
 
             </Switch>
 

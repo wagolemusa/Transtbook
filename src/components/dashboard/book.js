@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { MDBContainer,MDBInput } from 'mdbreact';
+import Back from './back';
 
 
 let token = localStorage.getItem('access_token')
@@ -133,18 +134,33 @@ document.getElementById("search").addEventListener("click",
    }
     render(){
         return(
+            <div>
+            <Back/>
+
 
             <MDBContainer>
+                <div className="card card-body">
+                <h2>Search Where You Want To Go</h2>
                 <div id="reg"></div>
             <form onSubmit={this.handleSubmit} className="white">
-                <MDBInput label="From" type="text" id="from_location" onChange={this.handleChange} required/>
-                <MDBInput label="To" type="text" id="to_location" onChange={this.handleChange} required/>
-                <button className="btn pink lighten-1 z-depth-0">Search</button>   
 
+            <div className="row">
+                <div className="col-md-5">
+                    <MDBInput label="From" type="text" id="from_location" onChange={this.handleChange} required/>
+                </div>
+                <div className="col-md-5">
+                    <MDBInput label="To" type="text" id="to_location" onChange={this.handleChange} required/>
+                </div>
+                <div className="col-md-2">
+                    <button className="btn pink lighten-1 z-depth-0">Search</button> 
+                </div>  
+            </div>
             </form>
             <div id="showsearch"></div>
             <div id="editor"></div>
+            </div>
             </MDBContainer>
+            </div>
         )
     }
 }

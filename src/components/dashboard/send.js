@@ -5,6 +5,7 @@ import PriceForm from '../parcel/PriceForm';
 import ReciverDetails from '../parcel/ReciverDetails';
 import ShowPage from '../parcel/ShowPage';
 import Sucess from '../parcel/Sucess';
+import Back from './back';
 
 
 class Sentparcel extends  Component{
@@ -58,44 +59,81 @@ class Sentparcel extends  Component{
         switch(step){
             case 1:
                 return (
+                <div>
+                    <Back />
+                    <div className="container">
+                    <div class="card card-body">
+                    <h2><strong>Send Parcel Datails</strong></h2>
                     <FormDetails 
                         nextStep={this.nextStep}
                         handleChange={this.handleChange}
                         values={values}
                     />
+                </div>
+                </div>
+                </div>
+
                 );
             case 2:
                 return (
+                    <div>
+                    <Back />
+                    <div className="container">
+                    <div class="card card-body">
+                    <h2><strong>Send Parcel Datails</strong></h2>
                     <ReciverDetails 
                     nextStep={this.nextStep}
                     prevStep={this.prevStep}
                     handleChange={this.handleChange}
                     values={values}
                 />
+                </div>
+                </div>
+                </div>
             );
             
             case 3:
                 return(
+                    <div>
+                    <Back />
+                    <div className="container">
+                    <div class="card card-body">
+                    <h2><strong>Send Parcel Datails</strong></h2>
                     <PriceForm
                     nextStep={this.nextStep}
                     prevStep={this.prevStep}
                     handleChange={this.handleChange}
                     values={values}
                     />
+                    </div>
+                    </div></div>
             );
 
             case 4:
                 return (
+                    <div>
+                    <Back />
+                    <div className="container">
+                    <div class="card card-body">
+                    <h2><strong>All Parcel Datails</strong></h2>
                     <ShowPage
                     nextStep={this.nextStep}
                     prevStep={this.prevStep}
                     handleChange={this.handleChange}
                     values={values}
                     />
+                    </div>
+                    </div></div>
                 );
 
             case 5:
                 return (
+                    <div>
+                    <Back />
+                    <div className="container">
+                    <div class="card card-body">
+                    <h2><strong>Thanks for using our sercives</strong></h2>
+
                     <Sucess 
                     nextStep={this.nextStep}
                     prevStep={this.prevStep}
@@ -103,16 +141,21 @@ class Sentparcel extends  Component{
                     values={values}
                     
                     />
+                    </div>
+                    </div></div>
                 );
 
             default:
                 return(
+
                     <h2>refuge wise</h2>
                 ) 
 
         }
+        
 
     }
+
 }
 
 
