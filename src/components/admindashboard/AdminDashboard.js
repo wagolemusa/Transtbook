@@ -14,6 +14,8 @@ render() {
 
  
     <ul class="navbar-nav ml-auto ml-md-0">
+    <i class="fab fa-btc"></i>&nbsp;&nbsp; <a href="/castomers">Clients</a>  &nbsp;&nbsp;&nbsp;&nbsp;
+
     <i class="far fa-calendar-plus"></i>&nbsp;&nbsp; <a href="/create_price">Create Price</a>  &nbsp;&nbsp;&nbsp;&nbsp;
 
 <i class="fas fa-sign-out-alt"></i> &nbsp;&nbsp;<a href="#">Logout</a>  

@@ -14,6 +14,8 @@ import datesearch from '../admindashboard/datesearch';
 import payments from '../admindashboard/payments';
 import parcelorders from '../admindashboard/parcelorders';
 import create_price from '../admindashboard/create_price';
+import castomers from '../admindashboard/castomers';
+import Update from '../admindashboard/updateprice';
 
 class Home extends Component{
 
@@ -39,6 +41,8 @@ class Home extends Component{
             <Route path='/payments' component={payments} />
             <Route path='/parcelorders' component={parcelorders} />
             <Route path='/create_price' component={create_price} />
+            <Route path='/castomers' component={castomers} />
+            <Route path='/:prices_id' component={Update} />
 
             </Switch>
 
