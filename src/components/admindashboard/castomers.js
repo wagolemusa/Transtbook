@@ -1,4 +1,5 @@
-import React, { Component } from 'react'
+import React, {Component} from 'react';
+
 import AdminNav from './adminNav';
 import Create from './render/create';
 import Slide from './render/slide';
@@ -10,41 +11,43 @@ let token = localStorage.getItem('access_token')
 // let current_user = localStorage.getItem('current_user')
 let access_token = "Bearer " + token
 
-class Price extends Component {
-
+class Castomer extends Component{
 
     state = {
-        car_number: '',
+        customer_name: '',
+        customer_number: '',
         from_location: '',
         to_location: '',
-        period: '',
-        arrival: '',
+        quantiy: '',
         price: '',
-        day_time: ''
+        phone: '',
+        date_when: '',
+        time_at: ''
     }
+
     handleChange = (e) => {
         this.setState({
-            [e.target.id]: e.target.value
+            [ e.target.id ]: e.target.value
         })
     }
-    
-    handleSubmit = (e) => {
+
+    handleSubmit = (e) =>{
         e.preventDefault()
-        fetch('https://senditparcel.herokuapp.com/api/admin/v2/locations',{
-            method:'POST',
-            body: JSON.stringify(this.state),
-            headers: {
-                'Content-Type': 'application/json',
-                'Accept':'application/json',
-                'Authorization':access_token
-            }
+        fetch('https://senditparcel.herokuapp.com/api/admin/v2/create/passenger',{
+        method: 'POST',
+        body: JSON.stringify(this.state),
+        headers:{
+            'Content-Type': 'application/json',
+            'Accept': 'application/json',
+            'Authorization': access_token
+        }
+
         })
         .then((res)=> res.json())
-        .then((data) => {
-            document.getElementById("msg").innerText = data["message"]
-                window.location.replace("create_price")
+        .then((data) =>{
+            document.getElementById("sms").InnerText = data["message"]
         })
-        .catch(error => console.log('error:', error));
+        .catch(error => console.log('error:', error))
     }
 
     toggle = () => {
@@ -54,6 +57,7 @@ class Price extends Component {
       }
       
 
+
     render(){
         return(
             <div>
@@ -61,19 +65,23 @@ class Price extends Component {
             <Slide/>
             <div className="container">
      <MDBContainer>
-      <MDBBtn onClick={this.toggle}>ADD LOCATION</MDBBtn>
+      <MDBBtn onClick={this.toggle}>ADD CLIENTS</MDBBtn>
       <MDBModal isOpen={this.state.modal} toggle={this.toggle}>
         <MDBModalHeader toggle={this.toggle}>Create Prices</MDBModalHeader>
-        <div id="msg"></div>
+        <div id="sms"></div>
         <MDBModalBody>
             <form onSubmit={this.handleSubmit}>
-                <MDBInput label="Car Number" type="number" id="car_number" onChange={this.handleChange} required/>
+                <MDBInput label="Customer Name" type="text" id="customer_name" onChange={this.handleChange} required/>
+                <MDBInput label="Customer Number" type="number" id="customer_number" onChange={this.handleChange} required/>
                 <MDBInput label="From" type="text" id="from_location" onChange={this.handleChange} required/>
                 <MDBInput label="To" type="text" id="to_location" onChange={this.handleChange} required/>
-                <MDBInput label="Day" type="text" id="period" onChange={this.handleChange} required/>
-                <MDBInput label="Arrival" type="time" id="arrival" onChange={this.handleChange} required/>
+                <MDBInput label="How Many Seats" type="number" id="quantiy" onChange={this.handleChange} required/>
                 <MDBInput label="Price" type="number" id="price" onChange={this.handleChange} required/>
-                <MDBInput label="Time" type="time" id="day_time" onChange={this.handleChange} required/>
+                <MDBInput label="Lipa Na Mpesa phone" type="number" id="phone" onChange={this.handleChange} required/>
+                <MDBInput label="When Are You Traveling" type="date" id="date_when" onChange={this.handleChange} required/>
+                <MDBInput label="What Time Are You Traveling" type="time" id="time_at" onChange={this.handleChange} required/>
+
+
                 <button class="btn btn-primary">Create</button> 
 
             </form>  
@@ -90,6 +98,4 @@ class Price extends Component {
     }
 }
 
-
-export default Price
-
+export default Castomer;

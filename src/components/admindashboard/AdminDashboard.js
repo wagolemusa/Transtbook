@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import delivery from './delivery.png'
-
+import Allusers from './all_users';
+import Slide from './render/slide';
 
 class ChartsPage extends Component {
 
@@ -14,6 +15,8 @@ render() {
 
  
     <ul class="navbar-nav ml-auto ml-md-0">
+    <i class="fab fa-btc"></i>&nbsp;&nbsp; <a href="/castomers">Clients</a>  &nbsp;&nbsp;&nbsp;&nbsp;
+
     <i class="far fa-calendar-plus"></i>&nbsp;&nbsp; <a href="/create_price">Create Price</a>  &nbsp;&nbsp;&nbsp;&nbsp;
 
 <i class="fas fa-sign-out-alt"></i> &nbsp;&nbsp;<a href="#">Logout</a>  
@@ -21,65 +24,9 @@ render() {
     </ul>
 </nav>
 
-
-<div class="row">
-    <ul class="sidebar navbar-nav">
-    <li class="nav-item active">
-      <a class="nav-link" href="/passenger">
-        <i class="fas fa-fw fa-tachometer-alt"></i>
-        <span>Passengers bookings</span>
-      </a>
-    </li>
-
-    <li class="nav-item">
-      <a class="nav-link" href="/search">
-        <i class="fas fa-fw fa-chart-area"></i>
-        <span>Search Passengers</span></a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" href="/datesearch">
-        <i class="fas fa-fw fa-chart-area"></i>
-        <span>Search By Date</span></a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" href="/payments">
-        <i class="fas fa-fw fa-chart-area"></i>
-        <span>Payments</span></a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" href="/parcelorders">
-        <i class="fas fa-fw fa-chart-area"></i>
-        <span>Parcel Delivery Orders</span></a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" href="charts.html">
-        <i class="fas fa-fw fa-chart-area"></i>
-        <span>Parcel InTransit</span></a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" href="charts.html">
-        <i class="fas fa-fw fa-chart-area"></i>
-        <span>Parcel Delivered</span></a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" href="charts.html">
-        <i class="fas fa-fw fa-chart-area"></i>
-        <span>Parcel Canceled</span></a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" href="charts.html">
-        <i class="fas fa-fw fa-chart-area"></i>
-        <span>Charts</span></a>
-    </li>   
-    <li class="nav-item">
-      <a class="nav-link" href="tables.html">
-        <i class="fas fa-fw fa-table"></i>
-        <span>Tables</span></a>
-    </li>
-  </ul>
-
-  
-<div class="col-md-10">
+<Slide/>
+ 
+<div className="container">
 <br/>
     <div class="row">
       <div class="col-xl-3 col-sm-6 mb-3">
@@ -88,7 +35,7 @@ render() {
             <div class="card-body-icon">
               <i class="fas fa-fw fa-comments"></i>
             </div>
-            <div class="mr-5">26 New Messages!</div>
+            <div class="mr-5">Today's OnlineBookings 37</div>
           </div>
           <a class="card-footer text-white clearfix small z-1" href="#">
             <span class="float-left">View Details</span>
@@ -104,7 +51,7 @@ render() {
             <div class="card-body-icon">
               <i class="fas fa-fw fa-list"></i>
             </div>
-            <div class="mr-5">11 New Tasks!</div>
+            <div class="mr-5">Today's Parcel Orders 6</div>
           </div>
           <a class="card-footer text-white clearfix small z-1" href="#">
             <span class="float-left">View Details</span>
@@ -120,7 +67,7 @@ render() {
             <div class="card-body-icon">
               <i class="fas fa-fw fa-shopping-cart"></i>
             </div>
-            <div class="mr-5">123 New Orders!</div>
+            <div class="mr-5">Today's Desk Clients 8</div>
           </div>
           <a class="card-footer text-white clearfix small z-1" href="#">
             <span class="float-left">View Details</span>
@@ -136,7 +83,7 @@ render() {
             <div class="card-body-icon">
               <i class="fas fa-fw fa-life-ring"></i>
             </div>
-            <div class="mr-5">13 New Tickets!</div>
+            <div class="mr-5">13 Payments Failed issues</div>
           </div>
           <a class="card-footer text-white clearfix small z-1" href="#">
             <span class="float-left">View Details</span>
@@ -147,8 +94,18 @@ render() {
           </div>
         </div>
       </div>
+      </div>
+      <hr/>
+      <div class="row">
+    <div class="col col-md-8">
+      .col .col-md-8
+    </div>
+    <div class="col-6 col-md-4">
+    <Allusers/>
     </div>
   </div>
+
+
   </div>
  
   
