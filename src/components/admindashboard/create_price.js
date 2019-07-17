@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 import AdminNav from './adminNav';
 import Create from './render/create';
+import Slide from './render/slide';
+
 import { MDBContainer,MDBInput,  MDBBtn, MDBModal, MDBModalBody, MDBModalHeader, MDBModalFooter } from 'mdbreact';
 
 
@@ -56,6 +58,7 @@ class Price extends Component {
         return(
             <div>
             <AdminNav/>
+            <Slide/>
             <div className="container">
      <MDBContainer>
       <MDBBtn onClick={this.toggle}>ADD LOCATION</MDBBtn>

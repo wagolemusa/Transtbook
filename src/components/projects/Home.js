@@ -16,6 +16,7 @@ import parcelorders from '../admindashboard/parcelorders';
 import create_price from '../admindashboard/create_price';
 import castomers from '../admindashboard/castomers';
 import Update from '../admindashboard/updateprice';
+import Sms from '../admindashboard/sms';
 
 class Home extends Component{
 
@@ -42,7 +43,8 @@ class Home extends Component{
             <Route path='/parcelorders' component={parcelorders} />
             <Route path='/create_price' component={create_price} />
             <Route path='/castomers' component={castomers} />
-            <Route path='/:prices_id' component={Update} />
+            <Route path='/sms' component={Sms} />
+            <Route path='/:price_id' component={Update} />
 
             </Switch>
 
